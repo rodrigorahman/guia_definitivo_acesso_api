@@ -15,7 +15,7 @@ class UserRepositoryGetConnect implements IUserRepository {
         if(body is List){
           return body.map<UserModel>((resp) => UserModel.fromMap(resp)).toList();
         }
-        return null;
+        return <UserModel>[];
       }
     );
 
@@ -23,6 +23,6 @@ class UserRepositoryGetConnect implements IUserRepository {
       throw Exception('Erro ao buscar usuários');
     }
     
-    return response.body;
+    return response.body ?? <UserModel>[];
   }
 }

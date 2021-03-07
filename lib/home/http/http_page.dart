@@ -16,7 +16,7 @@ class HttpPage extends GetView<HttpController> {
                  final UserModel item = state[index];
                  return ListTile(
                    title: Text(item.name),
-                   subtitle: Text('Quantidade de types: ${item.types.length}'),
+                   subtitle: Text('Quantidade de types: ${item.types?.length ?? 0}'),
                  );
                },
              );
@@ -26,7 +26,7 @@ class HttpPage extends GetView<HttpController> {
                child: Column(
                  mainAxisAlignment: MainAxisAlignment.center,
                  children: [
-                   Text(error),
+                   Text(error ?? ''),
                    TextButton(
                      onPressed: () => controller.findUsers(),
                      child: Text('Tentar novamente'),

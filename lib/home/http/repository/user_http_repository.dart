@@ -10,7 +10,7 @@ class UserHttpRepository implements IUserRepository {
   @override
   Future<List<UserModel>> findAllUsers() async {
     try {
-      final response = await http.get('https://5f7cba02834b5c0016b058aa.mockapi.io/api/users');
+      final response = await http.get(Uri.parse('https://5f7cba02834b5c0016b058aa.mockapi.io/api/users'));
       final List<dynamic> responseMap = jsonDecode(response.body);
       return responseMap.map<UserModel>((resp) => UserModel.fromMap(resp)).toList();
     } catch (e) {

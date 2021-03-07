@@ -8,12 +8,12 @@ class UserModel {
   String id;
   String name;
   String username;
-  List<UserType> types;
+  List<UserType>? types;
   
   UserModel({
-    this.id,
-    this.name,
-    this.username,
+    required this.id,
+    required this.name,
+    required this.username,
     this.types,
   });
 
@@ -22,18 +22,16 @@ class UserModel {
       'id': id,
       'name': name,
       'username': username,
-      'user_types': types?.map((x) => x?.toMap())?.toList(),
+      'user_types': types?.map((x) => x.toMap()).toList(),
     };
   }
 
   factory UserModel.fromMap(Map<String, dynamic> map) {
-    if (map == null) return null;
-  
     return UserModel(
       id: map['id'] ?? '',
       name: map['name'] ?? '',
       username: map['username'] ?? '',
-      types: List<UserType>.from(map['user_types']?.map((x) => UserType.fromMap(x) ?? UserType()) ?? const []),
+      types: List<UserType>.from(map['user_types']?.map((x) => UserType.fromMap(x)) ?? const []),
     );
   }
 

@@ -7,8 +7,8 @@ class UserType {
   String name;
 
   UserType({
-    this.id,
-    this.name,
+    required this.id,
+    required this.name,
   });
 
 
@@ -20,8 +20,6 @@ class UserType {
   }
 
   factory UserType.fromMap(Map<String, dynamic> map) {
-    if (map == null) return null;
-  
     return UserType(
       id: map['id'] ?? '',
       name: map['name'] ?? '',

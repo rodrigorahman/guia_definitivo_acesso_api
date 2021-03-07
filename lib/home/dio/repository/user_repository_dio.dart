@@ -13,7 +13,7 @@ class UserRepositoryDio implements IUserRepository {
   Future<List<UserModel>> findAllUsers() async {
     try {
       final response = await _dio.get<List>('https://5f7cba02834b5c0016b058aa.mockapi.io/api/users');
-      return response.data.map((e) => UserModel.fromMap(e)).toList();
+      return response.data?.map((e) => UserModel.fromMap(e)).toList() ?? [];
     } catch (e) {
       print(e);
       rethrow;

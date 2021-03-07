@@ -1,4 +1,3 @@
-import 'package:consumindo_api_com_flutter/home/dio/repository/user_repository_dio.dart';
 import 'package:consumindo_api_com_flutter/repository/i_user_repository.dart';
 import 'package:get/get.dart';
 
