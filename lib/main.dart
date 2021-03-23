@@ -1,4 +1,12 @@
 import 'package:consumindo_api_com_flutter/home/home_bindinds.dart';
+import 'package:consumindo_api_com_flutter/params/dio_params/dio_params_bindings.dart';
+import 'package:consumindo_api_com_flutter/params/dio_params/dio_params_page.dart';
+import 'package:consumindo_api_com_flutter/params/get_connect_params/get_connect_params_bindings.dart';
+import 'package:consumindo_api_com_flutter/params/get_connect_params/get_connect_params_page.dart';
+import 'package:consumindo_api_com_flutter/params/http_params/http_params_bindings.dart';
+import 'package:consumindo_api_com_flutter/params/http_params/http_params_page.dart';
+import 'package:consumindo_api_com_flutter/params/params_bindings.dart';
+import 'package:consumindo_api_com_flutter/params/params_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -35,11 +43,32 @@ class MyApp extends StatelessWidget {
               page: () => GetConnectPage(),
               binding: GetConnectBindings(),
             ),
-             GetPage(
+            GetPage(
               name: '/dio',
               page: () => DioPage(),
               binding: DioBindings(),
-            )
+            ),
+            GetPage(
+                name: '/params',
+                page: () => ParamsPage(),
+                binding: ParamsBindings(),
+                children: [
+                  GetPage(
+                    name: '/http',
+                    page: () => HttpParamsPage(),
+                    binding: HttpParamsBindings(),
+                  ),
+                  GetPage(
+                    name: '/get_connect',
+                    page: () => GetConnectParamsPage(),
+                    binding: GetConnectParamsBindings(),
+                  ),
+                  GetPage(
+                    name: '/dio_params',
+                    page: () => DioParamsPage(),
+                    binding: DioParamsBindings(),
+                  ),
+                ])
           ],
         )
       ],
