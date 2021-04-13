@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 
 import 'home_page.dart';
 import 'modules/api_access/api_access_module.dart';
-import 'modules/exception/exceptions_module.dart';
 import 'modules/params/params_module.dart';
 
 void main() {
