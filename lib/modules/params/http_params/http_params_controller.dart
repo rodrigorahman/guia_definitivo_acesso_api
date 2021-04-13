@@ -9,7 +9,7 @@ class HttpParamsController extends GetxController {
 
   HttpParamsController(this._backend);
 
-  String get message => _message.value!;
+  String get message => _message.value;
   int get idade => _idade.value;
 
   Future<void> callPath() async {

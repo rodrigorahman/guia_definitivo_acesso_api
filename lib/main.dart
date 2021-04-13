@@ -1,3 +1,4 @@
+import 'package:consumindo_api_com_flutter/modules/exceptions/exceptions_module.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -19,6 +20,7 @@ class MyApp extends StatelessWidget {
         GetPage(name: '/', page: () => HomePage()),
         ApiAccessModule(),
         ParamsModule(),
+        ExceptionsModule(),
       ],
     );
   }

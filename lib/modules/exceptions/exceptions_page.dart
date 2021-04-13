@@ -1,12 +1,13 @@
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:flutter/material.dart';
+import './exceptions_controller.dart';
 
-class HomePage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
+class ExceptionsPage extends GetView<ExceptionsController> {
+	@override
+	Widget build(BuildContext context) {
+		return Scaffold(
       appBar: AppBar(
-        title: Text('Guia acesso API'),
+        title: Text('Guia acesso API Exceptions'),
       ),
       body: Container(
         width: double.infinity,
@@ -14,30 +15,31 @@ class HomePage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             TextButton(
-              onPressed: () => Get.toNamed('/api_access'),
+              onPressed: () => Get.toNamed('/exceptions/http'),
               child: Text(
-                'Access API',
+                'HTTP',
                 style: TextStyle(fontSize: 20),
               ),
             ),
             TextButton(
-              onPressed: () => Get.toNamed('/params'),
+              onPressed: () => Get.toNamed('/exceptions/dio'),
               child: Text(
-                'Params Example',
+                'DIO',
                 style: TextStyle(fontSize: 20),
               ),
             ),
             TextButton(
-              onPressed: () => Get.toNamed('/exceptions'),
+              onPressed: () => Get.toNamed('/exceptions/getconnect'),
               child: Text(
-                'Exceptions Example',
+                'GetConnect',
                 style: TextStyle(fontSize: 20),
               ),
             ),
+            
             
           ],
         ),
       ),
     );
-  }
+   }
 }

@@ -1,6 +1,5 @@
 import 'package:consumindo_api_com_flutter/model/backend_model.dart';
 import 'package:consumindo_api_com_flutter/repository/i_local_backend.dart';
-import 'package:consumindo_api_com_flutter/shared/rest_client.dart';
 import 'package:dio/dio.dart';
 
 class DioLocalBackendRepository implements ILocalBackend {

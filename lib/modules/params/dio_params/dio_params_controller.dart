@@ -9,7 +9,7 @@ class DioParamsController extends GetxController {
 
   DioParamsController(this._backend);
 
-  String get message => _message.value!;
+  String get message => _message.value;
   int get idade => _idade.value;
 
   Future<void> callPath() async {
