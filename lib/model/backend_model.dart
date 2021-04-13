@@ -1,15 +1,15 @@
 import 'dart:convert';
 
-
 class BackendModel {
-  
   String mensagem;
   int? idade;
-
+  
   BackendModel({
     required this.mensagem,
     this.idade,
   });
+  
+  
 
   Map<String, dynamic> toMap() {
     return {
